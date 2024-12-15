@@ -4,11 +4,11 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Button } from "@/components/ui/button"
-import { Github, ArrowRight, Sun, Moon } from 'lucide-react'
+import { Github, ArrowDown, Sun, Moon } from 'lucide-react'
 import '../styles/theme.css'
 
 export default function Home() {
-  const [theme, setTheme] = useState('light')
+  const [theme, setTheme] = useState('dark')
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme') || 'light'
@@ -25,7 +25,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen flex flex-col md:mx-auto">
-      <header className="py-6 px-4 sm:px-6 lg:px-8 border-b">
+      <header className="py-3 px-4 lg:px-6 border-b">
         <div className="container mx-auto flex justify-between items-center">
           <div className="text-2xl font-bold">browserpop</div>
           <Button variant="ghost" size="icon" onClick={toggleTheme}>
@@ -38,21 +38,27 @@ export default function Home() {
         <section className="py-20 px-4 sm:px-6 lg:px-8">
           <div className="container mx-auto text-center">
             <h1 className="text-4xl sm:text-5xl font-bold mb-6">
-              Take Control of Your Browsing
+              keep a check on your browsing activity
             </h1>
             <p className="text-xl mb-8 text-muted-foreground max-w-2xl mx-auto">
-              BrowserPop lets you easily block distracting websites with just a link.
-              Boost your productivity and focus on what matters.
+              browserpop lets you easily block distracting websites with just a link.
+              boost your productivity and focus on what matters.
             </p>
             <Button size="lg">
-              Add to Browser
+              download .zip file
+            </Button>
+            <Button size="lg" variant="outline" className="ml-2">
+              see download steps
             </Button>
           </div>
+          <p className="mt-4 text-sm text-muted-foreground text-center">
+            currently not available on chrome or edge browser.
+          </p>
         </section>
 
-        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-muted">
+        <section id="how-it-works" className="py-20 px-4 rounded-lg sm:px-6 lg:px-8 bg-muted">
           <div className="container mx-auto">
-            <h2 className="text-3xl font-bold mb-8 text-center">How It Works</h2>
+            <h2 className="text-3xl font-bold mb-8 text-center">how it works...</h2>
             <div className="max-w-md mx-auto">
               <div className="flex items-center mb-6">
                 <div className="bg-primary text-primary-foreground rounded-full w-8 h-8 flex items-center justify-center mr-4">1</div>
@@ -70,9 +76,9 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <section id="download-steps" className="py-20 px-4 sm:px-6 lg:px-8">
           <div className="container mx-auto">
-            <h2 className="text-3xl font-bold mb-8 text-center">How to Use</h2>
+            <h2 className="text-3xl font-bold mb-8 text-center">how to setup browserpop</h2>
             <div className="max-w-4xl mx-auto">
               <div className="flex flex-col md:flex-row items-center justify-between mb-12">
                 <div className="flex items-center mb-6 md:mb-0">
@@ -91,7 +97,7 @@ export default function Home() {
                 />
               </div>
               <div className="flex justify-center mb-12">
-                <ArrowRight className="w-6 h-6 text-muted-foreground" />
+                <ArrowDown className="w-6 h-6 text-muted-foreground" />
               </div>
               <div className="flex flex-col md:flex-row items-center justify-between mb-12">
                 <div className="flex items-center mb-6 md:mb-0">
@@ -110,7 +116,7 @@ export default function Home() {
                 />
               </div>
               <div className="flex justify-center mb-12">
-                <ArrowRight className="w-6 h-6 text-muted-foreground" />
+                <ArrowDown className="w-6 h-6 text-muted-foreground" />
               </div>
               <div className="flex flex-col md:flex-row items-center justify-between">
                 <div className="flex items-center mb-6 md:mb-0">
@@ -132,7 +138,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-muted">
+        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-muted rounded-lg">
           <div className="container mx-auto text-center">
             <h2 className="text-3xl font-bold mb-8">See BrowserPop in Action</h2>
             <div className="aspect-w-16 aspect-h-9 max-w-3xl mx-auto">
@@ -145,42 +151,48 @@ export default function Home() {
               />
             </div>
             <p className="mt-4 text-muted-foreground">
-              Watch how easy it is to block distracting websites with BrowserPop
+              watch how easy it is to use browserpop
             </p>
           </div>
         </section>
 
         <section className="py-20 px-4 sm:px-6 lg:px-8">
           <div className="container mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-8">Open Source and Community-Driven</h2>
+            <h2 className="text-3xl font-bold mb-8">open source</h2>
             <p className="text-xl mb-8 text-muted-foreground max-w-2xl mx-auto">
-              BrowserPop is an open-source project, built with love by developers for developers.
-              Check out our GitHub repository to contribute, report issues, or simply explore the code.
+              browserpop is a simple extension built using html, css, js. the code is open source and can be accessed on github.
+              in case of any feature requests, or issues, open an github issue. feel free to contribute.
             </p>
             <Button size="lg" variant="outline">
               <Github className="mr-2 h-4 w-4" />
-              View on GitHub
+              view on github
             </Button>
-            <p className="mt-4 text-sm text-muted-foreground">
-              Created by John Doe • Licensed under MIT
-            </p>
           </div>
         </section>
 
-        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-muted">
+        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-muted rounded-lg">
           <div className="container mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-8">Ready to Boost Your Productivity?</h2>
+            <h2 className="text-3xl font-bold mb-8">ready to boost your productivity?</h2>
+            <p className="text-md mb-8 text-muted-foreground max-w-2xl mx-auto">
+              browserpop currently supports website blocking and setting up focus hours with features like website time tracking, activity analysis coming soon.
+            </p>
             <Button size="lg">
-              Get BrowserPop Now
+              download browserpop now
             </Button>
           </div>
+          <p className="mt-4 text-sm text-muted-foreground text-center">
+            to be available on edge and chrome browser soon &lt;pending approval&gt;
+          </p>
         </section>
       </main>
 
-      <footer className="py-6 px-4 sm:px-6 lg:px-8 border-t border-border">
+      <footer className="mt-10 py-4 px-4 lg:px-8 border-t border-border">
         <div className="container mx-auto text-center text-sm text-muted-foreground">
-          © {new Date().getFullYear()} BrowserPop. All rights reserved.
+          © {new Date().getFullYear()} browserPop. all rights reserved.
         </div>
+        <p className="mt-4 text-sm text-muted-foreground text-center">
+          by <Link href="https://x.com/simplermayank">mayank</Link>
+        </p>
       </footer>
     </div>
   )
