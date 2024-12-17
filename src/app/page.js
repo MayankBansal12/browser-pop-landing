@@ -219,13 +219,10 @@ export default function Home() {
               See BrowserPop in Action
             </h2>
             <div className="aspect-w-16 aspect-h-9 max-w-3xl mx-auto">
-              <Image
-                src="/placeholder.svg?height=480&width=640"
-                alt="BrowserPop Demo"
-                width={640}
-                height={480}
-                className="rounded-lg shadow-lg"
-              />
+              <video controls className="rounded-lg shadow-lg">
+                <source src="/video/demo.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
             </div>
             <p className="mt-4 text-muted-foreground">
               watch how easy it is to use browserpop
